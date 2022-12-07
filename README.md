@@ -16,7 +16,7 @@
 ## Install
 
 ```bash
-$ npm install @semantic-release/npm -D
+$ npm install aron-semantic-release-npm -D
 ```
 
 ## Usage
