@@ -1,4 +1,4 @@
-# @semantic-release/npm
+# aron semantic release npm
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to publish a [npm](https://www.npmjs.com) package.
 
@@ -28,7 +28,7 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/npm",
+    "aron-semantic-release-npm",
   ]
 }
 ```
