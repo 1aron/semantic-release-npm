@@ -1,10 +1,15 @@
-# aron semantic release npm
+[![Build Status](https://github.com/semantic-release/npm/workflows/Test/badge.svg)](https://github.com/semantic-release/npm/actions?query=workflow%3ATest+branch%3Amaster) [![npm latest version](https://img.shields.io/npm/v/aron-semantic-release-npm/latest.svg)](https://www.npmjs.com/package/aron-semantic-release-npm)
+[![npm next version](https://img.shields.io/npm/v/aron-semantic-release-npm/next.svg)](https://www.npmjs.com/package/aron-semantic-release-npm)
+[![npm beta version](https://img.shields.io/npm/v/aron-semantic-release-npm/beta.svg)](https://www.npmjs.com/package/aron-semantic-release-npm)
 
-[**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to publish a [npm](https://www.npmjs.com) package.
-
-[![Build Status](https://github.com/semantic-release/npm/workflows/Test/badge.svg)](https://github.com/semantic-release/npm/actions?query=workflow%3ATest+branch%3Amaster) [![npm latest version](https://img.shields.io/npm/v/@semantic-release/npm/latest.svg)](https://www.npmjs.com/package/@semantic-release/npm)
-[![npm next version](https://img.shields.io/npm/v/@semantic-release/npm/next.svg)](https://www.npmjs.com/package/@semantic-release/npm)
-[![npm beta version](https://img.shields.io/npm/v/@semantic-release/npm/beta.svg)](https://www.npmjs.com/package/@semantic-release/npm)
+[**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to publish a [npm](https://www.npmjs.com) package. This is a https://github.com/semantic-release/npm fork to provide additional useful options for monorepo:
+```json
+{
+     "publishArgs": ["--workspace", "packages"],
+     "versionArgs": ["--workspace", "packages"]
+}
+```
+At the same time, I've submitted a related PR to the Semantic Release team: https://github.com/semantic-release/npm/pull/534
 
 | Step               | Description |
 |--------------------|-------------|
@@ -96,7 +101,7 @@ The `npmPublish` and `tarballDir` option can be used to skip the publishing to t
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["@semantic-release/npm", {
+    ["aron-semantic-release-npm", {
       "npmPublish": false,
       "tarballDir": "dist",
     }],
@@ -114,7 +119,7 @@ When publishing from a sub-directory with the `pkgRoot` option, the `package.jso
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["@semantic-release/npm", {
+    ["aron-semantic-release-npm", {
       "pkgRoot": "dist",
     }],
     ["@semantic-release/git", {
